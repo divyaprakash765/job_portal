@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 const companySchema = new mongoose.Schema({
     name:{
         type: String,
-        required: true
+        required: true,
+        unique:true
     },
      description:{
         type: String,
@@ -12,7 +13,7 @@ const companySchema = new mongoose.Schema({
         type: String,
     },
      location:{
-        type: Number,
+        type: String,
     },
      logo:{
         type: String,
@@ -24,4 +25,4 @@ const companySchema = new mongoose.Schema({
     }
 },{timestamps:true});
 
-export const Job = mongoose.model("Job",jobSchema);
+export const Company = mongoose.model("company",companySchema);
